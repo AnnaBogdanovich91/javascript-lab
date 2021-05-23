@@ -1,0 +1,65 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Dart Drag and Drop: Basic Example</title>
+
+<link rel="stylesheet" href="example.css">
+</head>
+
+<body>
+	
+
+  <div  id='container1' class="container" ondrop="restore(event)" ondragover="allowDrop(event)">
+
+    <img class="document" id='img1' src="images/document.png" draggable=true ondragstart="drag(event)">
+    <img class="document" id='img2' src="images/document.png" draggable=true ondragstart="drag(event)">
+    <img class="document" id='img3' src="images/document.png" draggable=true ondragstart="drag(event)">
+    <img class="document" id='img4' src="images/document.png" draggable=true ondragstart="drag(event)">
+  </div>
+	<div class="trashempty" id='trash1' ondrop="drop(event)" ondragover="allowDrop(event)" draggable=true ondragstart="drag(event)"></div>
+<script>
+	var counter = 0;
+	
+	function allowDrop(ev) {
+		ev.preventDefault();
+	}
+
+	function drag(ev) {
+		ev.dataTransfer.setData("text", ev.target.id);
+	}
+
+	function drop(ev) {
+		ev.preventDefault();
+		ev.target.className="trashfull";
+		
+		var data = ev.dataTransfer.getData("text");
+		var child = document.getElementById(data);
+		var parent = child.parentNode;
+		parent.removeChild(child);
+		counter++;
+	}
+
+	function restore(ev) {
+		ev.preventDefault();
+		var data = ev.dataTransfer.getData("text");
+		if ( counter > 0)	{	
+			counter--;
+			if (counter == 0 ) document.getElementById(data).className="trashempty";
+		
+			var img = document.createElement('img');
+			img.src = "images/document.png";
+			img.id = new Date().getTime();
+			img.className='document';
+			img.draggable=true;
+			img.addEventListener("dragstart", drag);
+			document.getElementById('container1').appendChild(img);
+		}
+
+	}
+</script>
+
+ 
+</body>
+</html>

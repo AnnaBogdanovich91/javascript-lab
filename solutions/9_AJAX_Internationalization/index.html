@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Пример локализации HTML5</title>
+    
+    <link rel="stylesheet" href="css/html5.internationalization.css" type="text/css" />
+
+  </head>
+  <body>
+    <h1 data-langkey="HTML5 Internationalization Example">HTML5 Internationalization Example</h1>
+    <div id='languages'>
+        <img src="images/if_RU_167808.png" class='language' data-lang='russia' alt='Russian Flag' />
+        <img src='images/if_FR_167740.png' class='language' data-lang='france' alt='French Flag' />
+        <img src="images/if_DE_167808.png" class='language' data-lang='germany' alt='German Flag' />        
+        <img src="images/if_GB_167794.png" class='language' data-lang='britain' alt='British Flag' />
+    </div>
+    <fieldset>
+    <legend>
+        <span data-langkey="Application Form">Application Form</span>
+    </legend>
+        <span data-langkey="Name">Name</span><br /><input type="text" /><br />
+        <span data-langkey="Email Address">Email Address</span><br /><input type="email" /><br />
+        <span data-langkey="Company">Company</span><br /><input type='text' /><br />
+        <span data-langkey="Telephone No.">Telephone No.</span><br /><input type='text' /><br /> 
+        <label data-langkey="Gender">Gender</label><br />    
+        <select>
+          <option data-langkey="Male">Male</option>
+          <option data-langkey="Female">Female</option>
+          <option data-langkey="Prefer not to say">Prefer not to say</option>          
+        </select>
+        
+    </fieldset>
+    
+    <script src='js/connection.js' ></script>
+    <script src='js/html5.internationalization.js' ></script>
+  </body>
+</html>

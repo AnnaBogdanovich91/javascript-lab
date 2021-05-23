@@ -1,0 +1,45 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #333;
+  background-color: #fff;
+  margin: 0;
+}
+
+.container {
+  max-width: 500 px;
+  padding: 15px 15px 0 15px;
+}
+
+.trashempty {
+  background: url(images/trashempty.png);
+  height: 128px;
+  width: 128px;
+  margin-top: 90px;
+  float: left;
+  opacity: 0.7;
+}
+
+.trashfull {
+  background: url(images/trashfull.png);
+  height: 128px;
+  width: 128px;
+  margin-top: 90px;
+  float: left ;
+  opacity: 0.7;
+}
+
+.document {
+  margin-top: 10px;
+  display: block;
+  
+}
+
+.dnd-over {
+  opacity: 1;
+}
+
+.dnd-dragging {
+  opacity: 0.5;
+}

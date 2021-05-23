@@ -1,0 +1,16 @@
+.section1 {   
+    height: 30px;
+    margin-bottom: 10px;
+}
+.section2 {   
+    height: 30px;
+}
+.wrapper {   
+    border: 1px solid black;   
+    width: 200px;   
+    background-color: gray;
+}
+div {
+    width: 200px;
+    background-color: white;
+}

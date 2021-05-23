@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Towns</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			h1 {
+				font-size: 1.5em
+			}	
+			input, button {
+				min-width: 72px;
+				min-height: 36px;
+				border: 1px solid grey;
+			}
+			label, input, button {
+				display: block;
+			}
+			input {
+				margin-bottom: 1em;
+			}
+			table, th, td {
+				border: 1px solid black;
+				text-align: center;	
+				width:	500px;
+				height: 36px;
+			}
+    	</style>
+	</head>
+    <body>
+        Название: <input type="text" id="townName">
+        Страна:   <input type="text" id="state">
+        Население:  <input type="number" id="population">
+        <input type="button" value="Сохранить город" onclick=clickButton()>
+        <br><br>
+        <table id='townTable'>
+            <tr>
+                <th>Название</th>
+                <th>Страна</th> 
+                <th>Население</th>
+            </tr>
+        </table>
+        <script>
+            var arrayTown = [];
+            
+            function clickButton ()
+            {
+                var town  = {};
+                town.townName = document.getElementById('townName').value;
+                town.state = document.getElementById('state').value;
+                town.population = document.getElementById('population').value;
+                town.population = parseInt(town.population);
+                arrayTown.push(town);
+                
+                showTowns();
+            }        
+            
+            function showTowns ()
+            {
+                arrayTown.sort(compareTowns);
+                arrayTown.reverse();
+                document.getElementById('townTable').innerHTML = '<tr>' +
+                       '<th>Название</th>' +
+                    '<th>Страна</th>' + 
+                    '<th>Население</th>' +
+                    '</tr>'
+                
+                for (i = 0; i < arrayTown.length; i++ )
+                {
+                    var str="";
+                    str += '<tr>';
+                    str += '<td>' + arrayTown[i].townName + '</td>';
+                    str += '<td>' + arrayTown[i].state + '</td>';
+                    str += '<td>' + arrayTown[i].population + '</td>';
+                    str += '</tr>';
+                    document.getElementById('townTable').innerHTML += str;
+                }
+            }
+ 
+            function compareTowns (townA, townB)
+            {
+                return townA.population - townB.population;
+
+            }
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <title>Пример использования HTML5 LocalStorage</title>
+    <meta charset="UTF-8">
+    <script src="Storage.js"></script>
+    <link rel="stylesheet" href="StorageStyle.css">
+</head>
+<body onload="doShowAll()">
+    <h1>Введите товары и их количество</h1>
+    <form name=ShoppingList>
+        <div id="PlayArea">
+            <table>
+		<tr>
+                    <td><b>Товар:</b><input type=text name=name></td>
+                    <td><b>Количество:</b><input type=text name=data></td>
+		</tr>
+
+		<tr>
+                    <td>
+                        <input type=button value="Сохранить"   onclick="SaveItem()"> 
+                        <input type=button value="Удалить" onclick="RemoveItem()">
+                    </td>
+		</tr>
+            </table>
+	</div>
+
+	<div id="items_table">
+            <h2>Список покупок</h2>
+            <table id=list></table>
+            <p>
+                <label><input type=button value="Очистить" onclick="ClearAll()">
+                <i>* Удалить все товары</i></label>
+            </p>
+	</div>
+	</form>
+
+</body>
+</html>

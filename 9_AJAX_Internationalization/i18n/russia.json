@@ -1,0 +1,12 @@
+{    
+    "Name": "Имя",
+    "Company": "Компания",
+    "Email Address":"Почтовый адрес",
+    "Application Form": "Форма",
+    "Telephone No.": "Телефон",
+    "Gender": "Пол",
+    "Male": "Мужской",
+    "Female": "Женский",
+    "Prefer not to say": "Предпочитаю не указывать",
+    "HTML5 Internationalization Example": "Пример локализации HTML5"
+}

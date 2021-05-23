@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var arrayTown = [];
+            
+            while  (confirm('Вы хотите ввести город?'))
+                {
+                    var town  = {};
+                    town.townName = prompt ('Укажите название:');
+                    town.state = prompt ('Укажите страну:');
+                    town.population = prompt('Укажите население:');
+                    town.population = parseInt(town.population);
+                    arrayTown.push(town);
+                }        
+          
+            arrayTown.sort(compareTowns);
+
+            alert ('Самый населенный город ' + arrayTown[arrayTown.length - 1 ].townName);
+            
+            function compareTowns (townA, townB)
+            {
+                return townA.population - townB.population;
+
+            }
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="counter.js"></script>
+    </head>
+    <body>
+         <p>Обычный текст</p>
+        <h1>Заголовок 1 </h1>
+        <h2>Заголовок 2</h2>
+
+        12<input type="range" min="12" max="26" step="1" id="zoom"  >26
+    <br><br>
+        Введите размер: <input type="number" min="12" max="26" id="num">
+        <br><br>
+        <a href="#" id="size-12">12</a>
+        <a href="#" id="size-14">14</a>
+        <a href="#" id="size-16">16</a>
+        
+        <script>
+            function makeSizer(size) {
+                return function() {
+                  document.body.style.fontSize = size + 'px';
+                };
+              }
+
+
+//
+              document.getElementById('size-12').onclick = makeSizer(12);
+              document.getElementById('size-14').onclick =  makeSizer(14);
+              document.getElementById('size-16').onclick =  makeSizer(16);
+        //var size26 = function () { document.body.style.fontSize = 26 + 'px'};
+          //  document.getElementById('size-12').onclick = size26;
+            //document.getElementById('size-14').addEventListener('click', size26);
+            var sizer = function () {
+                            document.body.style.fontSize = 
+                            this.value + 'px';
+                    };
+            
+            document.getElementById('zoom').oninput = makeSizer (document.getElementById('zoom').value); 
+                    
+            document.getElementById('num').addEventListener('change',sizer);
+            
+            var counter = 10;
+            var c1 = new Counter();
+            var c2 = new Counter ();
+            c1.increment(); c1.increment();
+            c2.decrement();
+            alert (c1.getValue());
+            alert (c2.getValue);
+            alert (counter);
+        </script>
+    </body>
+</html>
